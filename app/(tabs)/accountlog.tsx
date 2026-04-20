@@ -1,4 +1,6 @@
-import { StyleSheet, Text, TextInput, TouchableOpacity, View, } from 'react-native';
+import EvilIcons from '@expo/vector-icons/EvilIcons';
+import Ionicons from '@expo/vector-icons/Ionicons';
+import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 export default function accountlog() {
     return (
@@ -9,43 +11,42 @@ export default function accountlog() {
 
                 {/* Username*/}
                 <View style={styles.usercontainer}>
-                    <TextInput
+                    <TextInput style={{ fontSize:18,}}
                         placeholder='Username/Email'
                         placeholderTextColor={"white"}
-                        style={styles.inputuser} />
+                        />
                 </View>
 
-                {/* Password*/}
                 <View style={styles.passwordcontainer}>
-                    <View>
-                        <TextInput
+                    
+                        <TextInput style={{ fontSize:18,height:55, width:"80%"}}
                             placeholder='Password'
                             placeholderTextColor={"white"}
-                            secureTextEntry
-                            style={styles.inputpassword}
+                            secureTextEntry={true}
                         />
-                    </View>
-                    <View>
-                        <Text style={{ fontSize: 15, color: "White" }}>Forget?</Text>
-                    </View>
+                        <Text>Forget</Text>  
                 </View>
-                {/*Forget*/}
+            <View style={{marginTop:25,flexDirection:"row",alignItems:"center",alignSelf:"flex-start",}}>
+                <Ionicons name="checkbox" size={24} color="#fff" />
+                <Text style={{marginLeft:10,fontSize:18,color:}}>Remenber Me</Text>
+            </View>
 
-                <View>
-                    <Text>Remember me</Text>
-                </View>
-                {/* SignButton*/}
-                <View style={styles.SignButton}>
-                    <TouchableOpacity>
-                        <Text style={styles.SignInText}>Log In</Text>
-                    </TouchableOpacity>
-                </View>
+            <TouchableOpacity activeOpacity={0.6} style={{marginTop:30,height:50,width:"85%",backgroundColor:"black",borderRadius:20,justifyContent:"center",alignItems:"center",}}>
+                <Text style={{color:"#FFF", fontSize:20,}}>Log In</Text>
+            </TouchableOpacity>
 
-                <View style={styles.fb}>
-                    <TouchableOpacity>
-                        <Text style={styles.fbText}> Log in with Facebook</Text>
-                    </TouchableOpacity>
-                </View>
+            
+            <TouchableOpacity activeOpacity={0.6} style={{marginTop:30,height:50,width:"85%",backgroundColor:"#FFF",borderRadius:20,justifyContent:"center",alignItems:"center",
+                flexDirection:"row",
+            }}>
+                <EvilIcons name="sc-facebook" size={24} color="black" />
+                <Text style={{color:"black", fontSize:20,}}>Log In with Facebook</Text>
+            </TouchableOpacity>
+
+       
+            <Text style={{color:"#FFF", marginTop:35,paddingRight:"32%"}}>Don't have an account? Sign Up</Text>
+      
+
             </SafeAreaView>
         </SafeAreaProvider>
 
@@ -56,76 +57,35 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: "gray",
         justifyContent: "center",
-        alignItems: "center",
+        //alignItems: "center",
+        paddingHorizontal:20
+        
     },
 
     title: {
         fontSize: 28,
         color: "fff",
-        marginRight: 150,
-
-    },
-    usercontainer: {
-        marginBottom: 30,
-        marginTop: 30,
-        paddingRight: 150,
-    },
-    inputuser: {
-        borderBottomWidth: 1,
-        borderBottomColor: 'rgba(255,255,255,0.5)',
-        paddingVertical: 15,
-        color: '#fff',
-        fontSize: 16,
-        marginBottom: 20,
-        paddingHorizontal: 20
-    },
-    inputpassword: {
-        borderBottomWidth: 1,
-        borderBottomColor: 'rgba(255,255,255,0.5)',
-        
-        color: '#fff',
-        fontSize: 16,
-        marginBottom: 20,
-
+      paddingRight:"48%",
+        marginBottom: 50,
     },
 
-    passwordcontainer: {
-        marginBottom: 30,
-        flexDirection: "row",
-        marginRight: 150,
-        alignItems: "center",
-        justifyContent: "center",
-    },
-    SignButton: {
-        alignItems: 'center',
-        backgroundColor: "black",
-        borderRadius: 28,
-        marginTop: 10,
-        height: 50,
-        width: 250,
-        justifyContent: 'center',
-
+    usercontainer:{
+     height: 40,
+    width: "85%",
+    borderBottomWidth: 3,
+    borderBottomColor: 'rgba(255, 255, 255, 0.5)',
+  
     },
 
-
-    fb: {
-        alignItems: 'center',
-        backgroundColor: "white",
-        borderRadius: 28,
-        marginTop: 10,
-        height: 50,
-        width: 250,
-        justifyContent: 'center',
+passwordcontainer:{
+    width: "85%",
+   height: 60,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    borderBottomWidth: 3,
+    borderBottomColor: 'rgba(255, 255, 255, 0.5)',
+    marginTop: 20,
     },
-
-    SignInText: {
-        fontSize: 20,
-        fontWeight: 'bold',
-        color: "white",
-    },
-    fbText: {
-        fontSize: 20,
-        fontWeight: 'bold',
-        color: "black",
-    },
+    
 })
