@@ -28,7 +28,7 @@ export default function accountlog() {
                 </View>
             <View style={{marginTop:25,flexDirection:"row",alignItems:"center",alignSelf:"flex-start",}}>
                 <Ionicons name="checkbox" size={24} color="#fff" />
-                <Text style={{marginLeft:10,fontSize:18,color:}}>Remenber Me</Text>
+                <Text style={{marginLeft:10,fontSize:18,color:"#fff"}}>Remenber Me</Text>
             </View>
 
             <TouchableOpacity activeOpacity={0.6} style={{marginTop:30,height:50,width:"85%",backgroundColor:"black",borderRadius:20,justifyContent:"center",alignItems:"center",}}>
